@@ -1,0 +1,131 @@
+.container-off-menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.container-off-menu .off-menu {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  width: fit-content;
+  height: 100%;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  direction: rtl;
+
+  background-color: #2196f3;
+}
+
+.container-off-menu .off-menu .title {
+  padding: 5px 70px;
+  border-bottom: 2px solid black;
+}
+
+.container-off-menu .off-menu li {
+  width: 100%;
+  list-style-type: none;
+}
+
+.container-off-menu .off-menu li a {
+  display: inline-block;
+  width: 100%;
+
+  font-family: 'Yekan', sans-serif, serif;
+  font-weight: 700;
+  text-decoration: none;
+  text-align: center;
+  color: wheat;
+
+  border-bottom: 1px solid black;
+  padding: 7px;
+}
+
+.container-off-menu .off-menu li a:hover {
+  color: orangered;
+}
+
+/* DropDown Menu ////////////////////////////////////////////////////////////////////// */
+.container-off-menu .off-menu .dropDown-menu .main-menu + .sub-menu {
+}
+
+.container-off-menu .off-menu .dropDown-menu .main-menu .icons {
+  transition: all 0.5s;
+}
+
+.container-off-menu .off-menu .dropDown-menu:hover .main-menu .icons {
+  color: orangered;
+  transform: rotate(180deg);
+}
+
+.container-off-menu .off-menu .dropDown-menu:hover .main-menu {
+  color: orangered;
+}
+
+.container-off-menu .off-menu .dropDown-menu .main-menu {
+  position: relative;
+}
+
+.container-off-menu .off-menu .dropDown-menu .main-menu::after {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 2px;
+
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  transition: all 0.5s;
+  background-color: orangered;
+}
+
+.container-off-menu .off-menu .dropDown-menu .main-menu {
+  border: none;
+}
+
+.container-off-menu .off-menu .dropDown-menu:hover .main-menu::after {
+  width: 50%;
+}
+
+.container-off-menu .off-menu .dropDown-menu {
+  height: 39px;
+  overflow: hidden;
+  border-bottom: 1px solid black;
+  transition: all 0.5s;
+}
+
+.container-off-menu .off-menu .dropDown-menu:hover {
+  height: 78px;
+}
+
+.container-off-menu .off-menu .dropDown-menu:hover .sub-menu a {
+  border: none;
+  /* opacity: 1; */
+}
+
+.container-off-menu .off-menu {
+  transform: translateX(100%);
+  transition: all 0.5s;
+}
+
+.container-off-menu .off-menu-show {
+  transform: translateX(0);
+}
+
+.container-off-menu {
+  display: none;
+}
+
+.container-off-menu-show {
+  display: initial;
+}
