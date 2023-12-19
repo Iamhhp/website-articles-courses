@@ -5,6 +5,7 @@ import { FaChevronUp } from 'react-icons/fa';
 import persianDate from 'persian-date';
 import OffcanvasMenu from '../OffcanvasMenu/OffcanvasMenu';
 import { RiMenuFoldFill } from 'react-icons/ri';
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
   const time = useRef(null);
@@ -23,22 +24,22 @@ const Header = () => {
   const itemHeaderMenu = (
     <>
       <li>
-        <a href=''>خانه</a>
+        <NavLink to={'/Home'}>خانه</NavLink>
       </li>
       <li>
-        <a href=''>دوره ها</a>
+        <NavLink to={'/Courses'}>دوره ها</NavLink>
       </li>
       <li className='dropDown-menu'>
-        <a href='' className='main-menu'>
+        <NavLink to={'Articles'} className='main-menu'>
           مقالات <FaChevronUp className='icons' />
-        </a>
+        </NavLink>
 
         <div className='sub-menu'>
-          <a href=''>ایجاد مقاله</a>
+          <NavLink to={'Article/Create/0'}>ایجاد مقاله</NavLink>
         </div>
       </li>
       <li>
-        <a href=''>درباره ما</a>
+        <NavLink to={'/About-us'}>درباره ما</NavLink>
       </li>
     </>
   );

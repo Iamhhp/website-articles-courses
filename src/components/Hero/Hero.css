@@ -1,0 +1,63 @@
+.container-hero {
+  background-color: #2196f3;
+  user-select: none;
+}
+
+.container-hero .img-hero {
+  width: 350px;
+  margin: auto;
+  padding-top: 50px;
+}
+
+.container-hero .img-hero img {
+  width: 100%;
+}
+
+.container-hero .title-hero {
+  font-size: 30px;
+  color: whitesmoke;
+  text-align: center;
+  padding: 50px 0px 20px;
+}
+
+.container-heroBox {
+  width: 150px;
+  height: 80px;
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+  margin-top: 20px;
+
+  border-radius: 75% 25% 22% 78% / 28% 30% 70% 72%;
+  background-color: white;
+}
+
+.container-heroBox .title {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-heroBox .title .icon {
+  font-size: 25px;
+  margin-left: 5px;
+}
+
+.container-hero .start-learn {
+  width: fit-content;
+  font-size: 30px;
+  color: whitesmoke;
+  margin: auto;
+
+  cursor: pointer;
+  padding-top: 40px;
+}
+
+.container-hero .start-learn:hover {
+  color: orangered;
+}
