@@ -1,12 +1,16 @@
+import './MainRoute.css';
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
-import './MainRoute.css';
+import Footer from '../Footer/Footer';
 
 const MainRoute = () => {
   return (
     <>
       <Header />
-      <Outlet />
+      <div className='container-main-route'>
+        <Outlet />
+      </div>
+      <Footer />
     </>
   );
 };
