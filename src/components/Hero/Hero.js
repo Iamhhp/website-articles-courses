@@ -42,7 +42,7 @@ const Hero = () => {
               </Col>
             </Row>
             <div className='start-learn'>
-              <SlControlStart /> شروع یادگیری
+              شروع یادگیری <SlControlStart />
             </div>
           </Col>
         </Row>

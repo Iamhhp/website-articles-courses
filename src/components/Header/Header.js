@@ -13,12 +13,12 @@ const Header = () => {
     const timer = window.setInterval(() => {
       const timeDate = new persianDate(new Date()).format('HH:mm:ss dddd');
       time.current.innerText = timeDate;
-
-      // Function Cleanup
-      return () => {
-        window.clearInterval(timer);
-      };
     }, 1000);
+
+    // Function Cleanup
+    return () => {
+      window.clearInterval(timer);
+    };
   }, []);
 
   const itemHeaderMenu = (
@@ -55,17 +55,17 @@ const Header = () => {
 
   return (
     <Container fluid className='container-header'>
-      <div className='header-sec-r'>
-        <div className='lbl-site'>وب سایت آموزشی</div>
-        <div className='time' ref={time}></div>
-      </div>
-
       <OffcanvasMenu title={'منو اصلی'} itemMenu={itemHeaderMenu} refContainerOffMenu={refContainerOffMenu} />
 
       <div className='icon-off-menu' onClick={clickHandlerIconOffMenu}>
         <RiMenuFoldFill />
       </div>
       <ul className='header-menu'>{itemHeaderMenu}</ul>
+
+      <div className='header-sec-r'>
+        <div className='lbl-site'>وب سایت آموزشی</div>
+        <div className='time' ref={time}></div>
+      </div>
     </Container>
   );
 };
