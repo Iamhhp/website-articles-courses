@@ -1,6 +1,7 @@
 .container-hero {
-  background-color: #2196f3;
+  overflow: hidden;
   user-select: none;
+  background-color: #2196f3;
 }
 
 .container-hero .img-hero {
@@ -17,7 +18,7 @@
   font-size: 30px;
   color: whitesmoke;
   text-align: center;
-  padding: 50px 0px 20px;
+  margin: 50px 0px 20px;
 }
 
 .container-heroBox {
