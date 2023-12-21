@@ -12,17 +12,17 @@
     {
       "id": 2,
       "image": "https://dl.next1code.ir/images/react/article2.webp",
-      "title": "عنوان مقاله دوم",
+      "title": "عنوان مقاله ",
       "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. ",
-      "writer": "علی حسن پور",
+      "writer": "حسین حسن پور",
       "category": "فرانت اند",
-      "readingTime": "57:17"
+      "readingTime": "12:01"
     },
     {
       "id": 3,
       "image": "https://dl.next1code.ir/images/react/article3.webp",
       "title": "عنوان مقاله سوم",
-      "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. ",
+      "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.",
       "writer": "علی حسن پور",
       "category": "فرانت اند",
       "readingTime": "17:17"

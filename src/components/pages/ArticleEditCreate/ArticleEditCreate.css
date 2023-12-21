@@ -1,0 +1,66 @@
+.container-form {
+  display: flex;
+  width: 60%;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  margin: auto;
+}
+
+.container-form label {
+  font-size: 20px;
+  padding: 10px 0px 3px;
+}
+
+.container-form .container-input {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container-form .container-input input {
+  font-family: 'Yekan', sans-serif, serif;
+  font-weight: 700;
+  width: 94%;
+
+  padding: 5px;
+  outline: none;
+  border: 2px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px 1px #2196f3;
+}
+
+.container-form .container-input .icon {
+  font-size: 32px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transition: all 0.7s;
+  filter: drop-shadow(0px 0px 2px #2196f3);
+}
+
+.container-form .container-input .icon:active {
+  transform: rotate(720deg);
+}
+
+.container-form button {
+  all: unset;
+  width: 94%;
+  box-sizing: border-box;
+
+  font-size: 18px;
+  text-align: center;
+  color: black;
+
+  margin: 30px 0px 10px auto;
+  padding: 10px 0px;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.container-form button:hover {
+  color: white;
+  background-color: black;
+}
