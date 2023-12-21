@@ -58,13 +58,13 @@
 .card-preview .footer .edit-article {
   all: unset;
   cursor: pointer;
-  padding: 10px;
   border-radius: 5px;
 }
 
 .card-preview .footer .del-article {
   color: red;
   border: 1px solid red;
+  padding: 10px 15px;
 }
 
 .card-preview .footer .del-article:hover {
@@ -75,6 +75,7 @@
 .card-preview .footer .edit-article {
   color: green;
   border: 1px solid green;
+  padding: 10px;
 }
 
 .card-preview .footer .edit-article:hover {

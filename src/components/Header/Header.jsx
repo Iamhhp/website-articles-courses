@@ -1,5 +1,5 @@
 import './Header.css';
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useMemo, useRef } from 'react';
 import { Container } from 'react-bootstrap';
 import { FaChevronUp } from 'react-icons/fa';
 import persianDate from 'persian-date';
@@ -8,6 +8,10 @@ import { RiMenuFoldFill } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
+  useEffect(() => {
+    console.log('Header Render!');
+  });
+
   const time = useRef(null);
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -21,27 +25,30 @@ const Header = () => {
     };
   }, []);
 
-  const itemHeaderMenu = (
-    <>
-      <li>
-        <NavLink to={'/Home'}>خانه</NavLink>
-      </li>
-      <li>
-        <NavLink to={'/Courses'}>دوره ها</NavLink>
-      </li>
-      <li className='dropDown-menu'>
-        <NavLink to={'Articles'} className='main-menu'>
-          مقالات <FaChevronUp className='icons' />
-        </NavLink>
+  const itemHeaderMenu = useMemo(
+    () => (
+      <>
+        <li>
+          <NavLink to={'/Home'}>خانه</NavLink>
+        </li>
+        <li>
+          <NavLink to={'/Courses'}>دوره ها</NavLink>
+        </li>
+        <li className='dropDown-menu'>
+          <NavLink to={'Articles'} className='main-menu'>
+            مقالات <FaChevronUp className='icons' />
+          </NavLink>
 
-        <div className='sub-menu'>
-          <NavLink to={'Article/Create/0'}>ایجاد مقاله</NavLink>
-        </div>
-      </li>
-      <li>
-        <NavLink to={'/About-us'}>درباره ما</NavLink>
-      </li>
-    </>
+          <div className='sub-menu'>
+            <NavLink to={'Article/Create/0'}>ایجاد مقاله</NavLink>
+          </div>
+        </li>
+        <li>
+          <NavLink to={'/About-us'}>درباره ما</NavLink>
+        </li>
+      </>
+    ),
+    []
   );
 
   const refContainerOffMenu = useRef(null);
@@ -69,4 +76,4 @@ const Header = () => {
     </Container>
   );
 };
-export default Header;
+export default memo(Header);

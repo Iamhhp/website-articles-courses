@@ -16,16 +16,16 @@
       "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. ",
       "writer": "علی حسن پور",
       "category": "فرانت اند",
-      "readingTime": "27:27"
+      "readingTime": "57:17"
     },
     {
       "id": 3,
       "image": "https://dl.next1code.ir/images/react/article3.webp",
       "title": "عنوان مقاله سوم",
       "description": "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. ",
-      "writer": "مرتضی پیرنیا",
-      "category": "بک اند",
-      "readingTime": "05:17"
+      "writer": "علی حسن پور",
+      "category": "فرانت اند",
+      "readingTime": "17:17"
     },
     {
       "id": 4,
@@ -126,9 +126,21 @@
       "state": "completed",
       "progressPercent": "72",
       "comments": [
-        { "name": "", "date": "", "comment": "" },
-        { "name": "", "date": "", "comment": "" },
-        { "name": "", "date": "", "comment": "" }
+        {
+          "name": "",
+          "date": "",
+          "comment": ""
+        },
+        {
+          "name": "",
+          "date": "",
+          "comment": ""
+        },
+        {
+          "name": "",
+          "date": "",
+          "comment": ""
+        }
       ]
     },
     {

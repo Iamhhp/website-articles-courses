@@ -2,8 +2,13 @@ import './MainRoute.css';
 import { Outlet } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { memo, useEffect } from 'react';
 
 const MainRoute = () => {
+  useEffect(() => {
+    console.log('MainRoute Render!');
+  });
+
   return (
     <>
       <Header />
@@ -14,4 +19,4 @@ const MainRoute = () => {
     </>
   );
 };
-export default MainRoute;
+export default memo(MainRoute);

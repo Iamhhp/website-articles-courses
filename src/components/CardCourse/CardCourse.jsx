@@ -4,8 +4,13 @@ import { GiDuration } from 'react-icons/gi';
 import { NavLink } from 'react-router-dom';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 import { PiStudentFill } from 'react-icons/pi';
+import { useEffect } from 'react';
 
 const CardCourse = ({ id, image, studentCount, title, description, teacher, duration, mainPrice, discountPrice }) => {
+  useEffect(() => {
+    console.log('CardCourse Render!');
+  });
+
   const formattingPrice = (price) => {
     return price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
   };

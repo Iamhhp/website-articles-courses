@@ -9,9 +9,13 @@ import { GiTeacher } from 'react-icons/gi';
 import CountUp from 'react-countup';
 import aos from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 const Hero = () => {
+  useEffect(() => {
+    console.log('Hero Render!');
+  });
+
   useEffect(() => {
     aos.init();
   }, []);
@@ -50,7 +54,7 @@ const Hero = () => {
     </Container>
   );
 };
-export default Hero;
+export default memo(Hero);
 
 const HeroBox = ({ title, count, icon }) => {
   return (

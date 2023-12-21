@@ -1,6 +1,11 @@
+import { memo, useEffect } from 'react';
 import './OffcanvasMenu.css';
 
 const OffcanvasMenu = ({ title, itemMenu, refContainerOffMenu }) => {
+  useEffect(() => {
+    console.log('OffcanvasMenu Render!');
+  });
+
   const clickHandler = () => {
     refContainerOffMenu.current.firstElementChild.classList.toggle('off-menu-show');
 
@@ -18,4 +23,4 @@ const OffcanvasMenu = ({ title, itemMenu, refContainerOffMenu }) => {
     </div>
   );
 };
-export default OffcanvasMenu;
+export default memo(OffcanvasMenu);

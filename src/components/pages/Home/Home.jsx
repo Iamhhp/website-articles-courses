@@ -13,23 +13,14 @@ import CardCourse from '../../CardCourse/CardCourse';
 const Home = () => {
   useEffect(() => {
     console.log('Home Render!');
-
-    window.scrollTo(0, 0);
   });
 
-  const [dataArticles, isPendingArticle] = useFetch('http://localhost:5000/articles');
-  const [dataArticlesNewest, setDataArticlesNewest] = useState([]);
   useEffect(() => {
-    const dataNewest = dataArticles.filter((article, i) => i >= 0 && i <= 6);
-    setDataArticlesNewest([...dataNewest]);
-  }, [dataArticles]);
+    window.scrollTo(0, 0);
+  }, []);
 
+  const [dataArticles, isPendingArticle] = useFetch('http://localhost:5000/articles');
   const [dataCourses, isPendingCourses] = useFetch('http://localhost:5000/courses');
-  const [dataCoursesNewest, setDataCoursesNewest] = useState([]);
-  useEffect(() => {
-    const dataNewest = dataCourses.filter((course, i) => i >= 0 && i <= 6);
-    setDataCoursesNewest([...dataNewest]);
-  }, [dataCourses]);
 
   return (
     <>
@@ -61,11 +52,13 @@ const Home = () => {
               <BtnSwiper />
             </div>
 
-            {dataArticlesNewest.map((article) => (
-              <SwiperSlide key={article.id}>
-                <CardArticle {...article} />
-              </SwiperSlide>
-            ))}
+            {dataArticles
+              .filter((article, i) => i >= 0 && i <= 6)
+              .map((article) => (
+                <SwiperSlide key={article.id}>
+                  <CardArticle {...article} />
+                </SwiperSlide>
+              ))}
           </Swiper>
         )}
 
@@ -84,11 +77,13 @@ const Home = () => {
               <BtnSwiper />
             </div>
 
-            {dataCoursesNewest.map((course) => (
-              <SwiperSlide key={course.id}>
-                <CardCourse {...course} />
-              </SwiperSlide>
-            ))}
+            {dataCourses
+              .filter((article, i) => i >= 0 && i <= 6)
+              .map((course) => (
+                <SwiperSlide key={course.id}>
+                  <CardCourse {...course} />
+                </SwiperSlide>
+              ))}
           </Swiper>
         )}
       </Container>

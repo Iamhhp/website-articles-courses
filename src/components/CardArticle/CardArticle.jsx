@@ -1,8 +1,13 @@
 import './CardArticle.css';
 import { NavLink } from 'react-router-dom';
 import { FaBookReader } from 'react-icons/fa';
+import { useEffect } from 'react';
 
 const CardArticle = ({ id, image, title, description, writer, readingTime }) => {
+  useEffect(() => {
+    console.log('CardArticle Render!');
+  });
+
   return (
     <div className='card-article'>
       <img src={image} alt='' />
