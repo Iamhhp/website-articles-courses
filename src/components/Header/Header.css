@@ -80,6 +80,10 @@
   text-align: left;
 }
 
+.container-header .header-sec-r .lbl-site {
+  text-align: left;
+}
+
 /* DropDown Menu //////////////////////////////////////////////////////////////////*/
 .container-header .header-menu .dropDown-menu {
   position: relative;

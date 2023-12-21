@@ -21,11 +21,11 @@ const Hero = () => {
       <Container>
         <Row>
           <Col className='col-sm-12 col-md-6 col-lg-5'>
-            <div className='img-hero' data-aos='fade-right'>
+            <div className='img-hero' data-aos='fade-left'>
               <img src={imgHero} alt='' />
             </div>
           </Col>
-          <Col className='col-sm-12 col-md-6 col-lg-7' data-aos='fade-left'>
+          <Col className='col-sm-12 col-md-6 col-lg-7' data-aos='fade-right'>
             <div className='title-hero'>آمارها باعث افتخار ما هستند</div>
             <Row className='row-cols-1 row-cols-sm-2'>
               <Col data-aos='flip-left'>

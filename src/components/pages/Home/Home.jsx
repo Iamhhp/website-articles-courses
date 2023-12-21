@@ -13,6 +13,8 @@ import CardCourse from '../../CardCourse/CardCourse';
 const Home = () => {
   useEffect(() => {
     console.log('Home Render!');
+
+    window.scrollTo(0, 0);
   });
 
   const [dataArticles, isPendingArticle] = useFetch('http://localhost:5000/articles');
