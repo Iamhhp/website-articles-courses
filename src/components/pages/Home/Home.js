@@ -41,7 +41,7 @@ const Home = () => {
 
       <Container>
         {isPendingArticle ? (
-          <b>درحال بارگذاری...</b>
+          <h3>درحال بارگذاری...</h3>
         ) : (
           <Swiper
             className='my-swiper'
@@ -68,7 +68,7 @@ const Home = () => {
         )}
 
         {isPendingCourses ? (
-          <b>در حال بارگذاری...</b>
+          <h3>در حال بارگذاری...</h3>
         ) : (
           <Swiper
             className='my-swiper'

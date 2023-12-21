@@ -47,7 +47,7 @@
   background-color: #2196f3;
 }
 
-.btn-backward:hover .icon,
+.btn-forward:hover .icon,
 .btn-backward:hover .icon {
   color: #2196f3;
   background-color: white;
