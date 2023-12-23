@@ -168,11 +168,11 @@ const Articles = () => {
   }, [reloadPaginate]);
 
   const paginateHandler = ({ selected: pageNum }) => {
-    const dataPage = articlePagination.current.filter((article, i) => i >= pageNum && i < pageNum + 6);
+    const dataPage = articlePagination.current.filter((article, i) => i >= pageNum * 6 && i < pageNum * 6 + 6);
 
     window.setTimeout(() => {
       setArticleShow([...dataPage]);
-    }, 150);
+    }, 100);
   };
 
   // Effect Searching ////////////////////////////////////////////////////////////////////////////////////////
