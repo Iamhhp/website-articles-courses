@@ -1,0 +1,252 @@
+.container-course {
+  .title-header {
+    font-size: 40px;
+    padding: 15px 0px 10px;
+  }
+
+  .preview-course {
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+
+    position: sticky;
+    top: 80px;
+
+    .title {
+      font-size: 20px;
+      padding-bottom: 4px;
+    }
+
+    .about-teacher {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      overflow: hidden;
+      padding: 5px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: white;
+
+      .image {
+        width: 70px;
+        overflow: hidden;
+        border-radius: 50%;
+        border: 2px dashed gray;
+
+        img {
+          width: 100%;
+        }
+      }
+
+      .intro {
+        margin-right: 5px;
+
+        .name {
+          font-family: 'Yekan', sans-serif, serif;
+          font-weight: 700;
+          padding-bottom: 5px;
+        }
+
+        .desc {
+          font-family: 'Yekan', sans-serif, serif;
+          font-weight: 700;
+          font-size: 12px;
+          color: rgba(128, 128, 128);
+        }
+      }
+    }
+
+    .details-course {
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid gray;
+      border-radius: 5px;
+      background-color: white;
+
+      .student-count {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+
+        padding: 5px;
+        border: 1px dashed gray;
+        border-radius: 5px;
+
+        .icon {
+          font-size: 25px;
+          margin-left: 5px;
+        }
+
+        .count {
+          font-family: 'Yekan', sans-serif, serif;
+          font-weight: 700;
+        }
+      }
+
+      .progress-course {
+        padding: 5px 10px;
+        margin-top: 10px;
+        border: 1px dashed gray;
+        border-radius: 5px;
+
+        .percent {
+          display: flex;
+          flex-flow: row nowrap;
+          justify-content: flex-start;
+          align-items: center;
+
+          font-family: 'Yekan', sans-serif, serif;
+          font-weight: 700;
+
+          .icon {
+            font-size: 20px;
+            margin-left: 5px;
+            transform: scaleX(-1);
+          }
+        }
+
+        .progress-bar {
+          height: 10px;
+          margin-top: 10px;
+          border: 1px solid black;
+          border-radius: 5px;
+
+          position: relative;
+          overflow: hidden;
+
+          .progress-fill {
+            height: 100%;
+            border-radius: 5px;
+            background-color: #1fbd50;
+          }
+
+          .progress-fill::after {
+            content: '';
+            width: 200%;
+            height: 100%;
+
+            position: absolute;
+            top: 0px;
+            left: 0px;
+
+            background: repeating-linear-gradient(45deg, transparent, transparent 5%, rgba(255, 255, 255, 0.2) 5%, rgba(255, 255, 255, 0.2) 10%);
+            animation: colorProgress 5s linear 0s infinite normal;
+          }
+        }
+      }
+
+      button {
+        all: unset;
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+        margin-top: 10px;
+        cursor: pointer;
+
+        font-family: 'Yekan', sans-serif, serif;
+        font-weight: 700;
+        font-size: 18px;
+        text-align: center;
+        color: white;
+
+        border: 1px solid black;
+        border-radius: 5px;
+        background-color: #1fbd50;
+      }
+
+      button:hover {
+        color: #1fbd50;
+        background-color: white;
+      }
+    }
+  }
+
+  .image {
+    border-radius: 5px;
+    overflow: hidden;
+  }
+
+  .course {
+    padding: 20px 10px 0px;
+    margin-top: 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+
+    background-color: #f8f9fa;
+
+    .accordion-title {
+      padding-bottom: 5px;
+
+      .chapter {
+        font-size: 25px;
+      }
+
+      .desc {
+        font-family: 'Yekan', sans-serif, serif;
+        font-weight: 700;
+        color: rgb(128, 128, 128);
+        padding: 0px;
+        margin: 0px;
+      }
+    }
+
+    .item-accordion {
+      padding: 5px 0px;
+
+      a {
+        font-family: 'Yekan', sans-serif, serif;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .icon-item {
+        font-size: 25px;
+        color: #0d6efd;
+      }
+    }
+  }
+
+  .container-comment {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    padding: 10px;
+    margin: 20px 0px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    background-color: #f8f9fa;
+
+    .title {
+      font-size: 25px;
+    }
+
+    textarea {
+      resize: none;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    button {
+      all: unset;
+      cursor: pointer;
+      border: 1px solid black;
+      border-radius: 5px;
+
+      padding: 5px 10px;
+      margin-top: 10px;
+      align-self: flex-end;
+    }
+  }
+}
+
+@keyframes colorProgress {
+  to {
+    transform: translateX(-50%);
+  }
+}

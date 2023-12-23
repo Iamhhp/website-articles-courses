@@ -1,7 +1,7 @@
 import { FaChalkboardTeacher, FaRegQuestionCircle } from 'react-icons/fa';
 import './CardCourse.css';
 import { GiDuration } from 'react-icons/gi';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { RiMoneyDollarCircleFill } from 'react-icons/ri';
 import { PiStudentFill } from 'react-icons/pi';
 import { useEffect } from 'react';
@@ -43,7 +43,7 @@ const CardCourse = ({ id, image, studentCount, title, description, teacher, dura
       </div>
 
       <div className='footer'>
-        <NavLink>ثبت نام دوره</NavLink>
+        <Link to={`/Course/${id}`}>ثبت نام دوره</Link>
 
         <div className='price'>
           {discountPrice ? formattingPrice(discountPrice) : formattingPrice(mainPrice)}

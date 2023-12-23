@@ -1,5 +1,5 @@
 import './CardArticle.css';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { FaBookReader } from 'react-icons/fa';
 import { useEffect } from 'react';
 
@@ -16,9 +16,9 @@ const CardArticle = ({ id, image, title, description, writer, readingTime }) => 
         {title}-{id}
       </div>
       <div className='desc'>{description}</div>
-      <NavLink to={`/Article/${id}`} className='btn-continue'>
+      <Link to={`/Article/${id}`} className='btn-continue'>
         ادامه مقاله
-      </NavLink>
+      </Link>
 
       <div className='footer'>
         <div className='writer'>نویسنده : {writer}</div>
