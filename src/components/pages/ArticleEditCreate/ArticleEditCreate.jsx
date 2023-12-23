@@ -215,12 +215,14 @@ const ArticleEditCreate = () => {
             }}
           />
 
-          <LuRefreshCw
-            className='icon'
-            onClick={() => {
-              refreshInput(0, 'image');
-            }}
-          />
+          {editCreate === 'Create' ? null : (
+            <LuRefreshCw
+              className='icon'
+              onClick={() => {
+                refreshInput(0, 'image');
+              }}
+            />
+          )}
         </div>
 
         <label htmlFor='title'>عنوان</label>
@@ -233,12 +235,14 @@ const ArticleEditCreate = () => {
             }}
           />
 
-          <LuRefreshCw
-            className='icon'
-            onClick={() => {
-              refreshInput(1, 'title');
-            }}
-          />
+          {editCreate === 'Create' ? null : (
+            <LuRefreshCw
+              className='icon'
+              onClick={() => {
+                refreshInput(1, 'title');
+              }}
+            />
+          )}
         </div>
 
         <label htmlFor='description'>توضیحات</label>
@@ -251,12 +255,14 @@ const ArticleEditCreate = () => {
             }}
           />
 
-          <LuRefreshCw
-            className='icon'
-            onClick={() => {
-              refreshInput(2, 'description');
-            }}
-          />
+          {editCreate === 'Create' ? null : (
+            <LuRefreshCw
+              className='icon'
+              onClick={() => {
+                refreshInput(2, 'description');
+              }}
+            />
+          )}
         </div>
 
         <label htmlFor='writer'>نویسنده</label>
@@ -269,12 +275,14 @@ const ArticleEditCreate = () => {
             }}
           />
 
-          <LuRefreshCw
-            className='icon'
-            onClick={() => {
-              refreshInput(3, 'writer');
-            }}
-          />
+          {editCreate === 'Create' ? null : (
+            <LuRefreshCw
+              className='icon'
+              onClick={() => {
+                refreshInput(3, 'writer');
+              }}
+            />
+          )}
         </div>
 
         <label htmlFor='category'>موضوع</label>
@@ -287,12 +295,14 @@ const ArticleEditCreate = () => {
             }}
           />
 
-          <LuRefreshCw
-            className='icon'
-            onClick={() => {
-              refreshInput(4, 'category');
-            }}
-          />
+          {editCreate === 'Create' ? null : (
+            <LuRefreshCw
+              className='icon'
+              onClick={() => {
+                refreshInput(4, 'category');
+              }}
+            />
+          )}
         </div>
 
         <label htmlFor='readingTime'>زمان مطالعه</label>
@@ -305,12 +315,14 @@ const ArticleEditCreate = () => {
             }}
           />
 
-          <LuRefreshCw
-            className='icon'
-            onClick={() => {
-              refreshInput(5, 'readingTime');
-            }}
-          />
+          {editCreate === 'Create' ? null : (
+            <LuRefreshCw
+              className='icon'
+              onClick={() => {
+                refreshInput(5, 'readingTime');
+              }}
+            />
+          )}
         </div>
         <button type='button' onClick={clickHandlerBtnEditCreateArticle}>
           {editCreate === 'Edit' ? 'ویرایش مقاله' : 'ایجاد مقاله'}
