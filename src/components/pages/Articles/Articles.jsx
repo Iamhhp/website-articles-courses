@@ -172,7 +172,7 @@ const Articles = () => {
 
     window.setTimeout(() => {
       setArticleShow([...dataPage]);
-    }, 150);
+    }, 100);
   };
 
   // Effect Searching ////////////////////////////////////////////////////////////////////////////////////////
