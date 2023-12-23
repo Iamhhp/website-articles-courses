@@ -1,0 +1,65 @@
+.accordion {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: stretch;
+
+  border: 1px solid #2196f3;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 1px #2196f3;
+
+  transition: all 0.3s ease-in-out;
+  /* height: 35px; */
+  overflow: hidden;
+
+  margin-bottom: 20px;
+
+  .title {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+    padding: 5px;
+    border-bottom: 1px solid black;
+  }
+
+  .icon {
+    transition: all 0.5s;
+  }
+
+  .items {
+    margin: 0px;
+    padding: 2px 5px 5px;
+  }
+
+  .items li {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+
+    list-style-type: none;
+  }
+
+  .items li label {
+    font-family: 'Yekan', sans-serif, serif !important;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+  }
+
+  .items li input {
+    margin-left: 3px;
+    cursor: pointer;
+  }
+}
+
+.accordion-active {
+  height: 100px;
+
+  .icon {
+    transform: rotate(180deg);
+  }
+}

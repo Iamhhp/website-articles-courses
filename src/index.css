@@ -15,3 +15,7 @@
 
   font-family: 'Lalezar', sans-serif, serif;
 }
+
+body {
+  scroll-behavior: smooth !important;
+}
