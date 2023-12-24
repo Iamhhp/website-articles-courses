@@ -28,7 +28,9 @@ const CardCourse = ({ id, image, studentCount, title, description, teacher, dura
         </div>
       </div>
 
-      <div className='title'>{title}</div>
+      <div className='title'>
+        {title}-{id}
+      </div>
       <div className='desc'>{description}</div>
 
       <div className='details-course'>

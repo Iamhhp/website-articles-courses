@@ -1,0 +1,62 @@
+.toggle-btn {
+  width: 40px;
+  height: 20px;
+
+  input {
+    display: none;
+  }
+
+  .slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 15px;
+    background-color: #ccc;
+  }
+
+  /* text toggle */
+  .slider::after {
+    content: 'OFF';
+    font-family: sans-serif, serif;
+    font-size: 8px;
+    font-weight: 700;
+
+    transition: all 0.2s ease-in-out;
+    transform: translateX(-2px);
+  }
+
+  /* circle toggle */
+  .slider::before {
+    content: '';
+    width: 15px;
+    height: 15px;
+
+    border: 1px solid black;
+    border-radius: 50%;
+
+    transition: all 0.4s ease-in-out;
+    transform: translateX(2px);
+    background-color: white;
+  }
+
+  /* toggle is Active */
+  input:checked + .slider::after {
+    content: 'ON';
+    transform: translateX(18px);
+  }
+
+  input:checked + .slider::before {
+    content: '';
+    transform: translateX(-16px);
+  }
+
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+}
