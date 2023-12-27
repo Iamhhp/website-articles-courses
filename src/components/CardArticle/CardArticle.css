@@ -5,6 +5,7 @@
   align-items: flex-start;
   flex-shrink: 0 !important;
   flex-grow: 0 !important;
+  direction: rtl;
 
   width: 270px;
   border: 1px solid #2196f3;

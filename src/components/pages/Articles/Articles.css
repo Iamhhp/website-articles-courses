@@ -64,6 +64,12 @@
   transition: all 0.4s;
   transform: translateX(-120%);
   opacity: 0;
+
+  .row-cols-1 {
+    .col {
+      direction: ltr;
+    }
+  }
 }
 
 .container-articleShow-show {
