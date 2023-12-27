@@ -123,10 +123,10 @@ const Articles = () => {
   const sortingArticle = () => {
     switch (optionSorting.current) {
       case 'newest':
-        articlePagination.current = [...articleFilter.current.sort((a, b) => b.id - a.id)];
+        articlePagination.current = [...articleFilter.current.sort((a, b) => a.id - b.id)];
         break;
       case 'oldest':
-        articlePagination.current = [...articleFilter.current.sort((a, b) => a.id - b.id)];
+        articlePagination.current = [...articleFilter.current.sort((a, b) => b.id - a.id)];
         break;
       case 'longest':
         articlePagination.current = [
@@ -167,23 +167,19 @@ const Articles = () => {
     setReloadPaginate(false);
   }, [reloadPaginate]);
 
+  const containerArticleShow = useRef(null);
+  useEffect(() => {
+    containerArticleShow.current.classList.add('container-articleShow-show');
+  }, [articleShow]);
+
   const paginateHandler = ({ selected: pageNum }) => {
     const dataPage = articlePagination.current.filter((article, i) => i >= pageNum * 6 && i < pageNum * 6 + 6);
 
+    containerArticleShow.current.classList.remove('container-articleShow-show');
     window.setTimeout(() => {
       setArticleShow([...dataPage]);
-    }, 100);
+    }, 200);
   };
-
-  // Effect Searching ////////////////////////////////////////////////////////////////////////////////////////
-  const containerArticleShow = useRef(null);
-  useEffect(() => {
-    containerArticleShow.current.classList.remove('container-articleShow-show');
-
-    window.setTimeout(() => {
-      containerArticleShow.current.classList.add('container-articleShow-show');
-    }, 300);
-  }, [reloadPaginate]);
 
   // Items Accordion Menu ///////////////////////////////////////////////////////////////////////////////////////
   const changeHandlerOptionsSorting = (e) => {
@@ -273,7 +269,7 @@ const Articles = () => {
                 <ReactPaginate
                   renderOnZeroPageCount={null}
                   onPageChange={paginateHandler}
-                  className='container-paginate'
+                  className='container-paginate-article'
                   nextClassName='btn-next'
                   previousClassName='btn-prev'
                   breakClassName='item-paginate'
