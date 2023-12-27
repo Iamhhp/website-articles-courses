@@ -43,7 +43,7 @@ const Article = () => {
                   timerProgressBar: true,
                   timer: 1000,
                 }).then(() => {
-                  navigate('/Home');
+                  navigate('/Articles');
                 });
               } else {
                 Swal.fire({
