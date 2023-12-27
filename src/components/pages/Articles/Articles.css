@@ -67,7 +67,9 @@
 
   .row-cols-1 {
     .col {
-      direction: ltr;
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: center;
     }
   }
 }
