@@ -6,15 +6,26 @@ import AccordionMenu from '../../AccordionMenu/AccordionMenu';
 import ToggleBtn from '../../ToggleBtn/ToggleBtn';
 import ReactPaginate from 'react-paginate';
 import CardCourse from '../../CardCourse/CardCourse';
+import { IoIosArrowDropright, IoIosArrowDropleft } from 'react-icons/io';
 
 const Courses = () => {
+  useEffect(() => {
+    console.log('Courses Render!');
+    window.scrollTo(0, 0);
+  });
+
   const [courseFetch, isPending] = useFetch('http://localhost:5000/courses');
   const [courseShow, setCourseShow] = useState([]);
   useEffect(() => {
-    setCourseSearch((pervState) => [...courseFetch]);
+    setCourseSearch(() => [...courseFetch]);
   }, [courseFetch]);
 
-  // Searching Courses ///////////////////////////////////////////////////////////////////////
+  // Searching Courses //////////////////////////////////////////////////////////////////////////////////////////
+  const [reloadAccordion, setReloadAccordion] = useState(false);
+  useEffect(() => {
+    setReloadAccordion(false);
+  }, [reloadAccordion]);
+
   const [courseSearch, setCourseSearch] = useState([]);
   useEffect(() => {
     filteringCourse();
@@ -26,10 +37,13 @@ const Courses = () => {
     const optionSearch = boxSearch.children[1];
     const resultSearch = courseFetch.filter((course) => course[optionSearch.value].includes(inputSearch.value));
 
-    setCourseSearch((pervState) => [...resultSearch]);
+    optionSorting.current = 'newest';
+    optionFilter.current = { teacher: [], category: [], status: [] };
+    setReloadAccordion(true);
+    setCourseSearch(() => [...resultSearch]);
   };
 
-  // Filtering Courses ///////////////////////////////////////////////////////////////////////
+  // Filtering Courses ///////////////////////////////////////////////////////////////////////////////////////
   const optionFilter = useRef({ teacher: [], category: [], status: [] });
   const courseFilter = useRef([]);
   const filteringCourse = () => {
@@ -47,20 +61,22 @@ const Courses = () => {
       courseFilter.current = [...courseFilter.current.filter((course) => optionFilter.current.status.includes(course.state))];
     }
 
+    setReloadPaginate(true);
     sortingCourse();
   };
 
-  // items Accordions ///////////////////////////////////////////////////////////////////////
+  // sorting Course //////////////////////////////////////////////////////////////////////////////////////////
+  const optionSorting = useRef('newest');
   const sortingCourse = () => {
     switch (optionSorting.current) {
       case 'newest':
-        setCourseShow(() => [...courseFilter.current.sort((a, b) => b.id - a.id)]);
+        coursePaginate.current = [...courseFilter.current.sort((a, b) => b.id - a.id)];
         break;
       case 'oldest':
-        setCourseShow(() => [...courseFilter.current.sort((a, b) => a.id - b.id)]);
+        coursePaginate.current = [...courseFilter.current.sort((a, b) => a.id - b.id)];
         break;
       case 'longest':
-        setCourseShow(() => [
+        coursePaginate.current = [
           ...courseFilter.current.sort((a, b) => {
             const durationA = a.duration.split(':');
             const timeA = Number(durationA[0]) * 60 + Number(durationA[1]);
@@ -70,10 +86,10 @@ const Courses = () => {
 
             return timeB - timeA;
           }),
-        ]);
+        ];
         break;
       case 'shortest':
-        setCourseShow(() => [
+        coursePaginate.current = [
           ...courseFilter.current.sort((a, b) => {
             const durationA = a.duration.split(':');
             const timeA = Number(durationA[0]) * 60 + Number(durationA[1]);
@@ -83,33 +99,55 @@ const Courses = () => {
 
             return timeA - timeB;
           }),
-        ]);
+        ];
         break;
       case 'expensive':
-        setCourseShow(() => [
+        coursePaginate.current = [
           ...courseFilter.current.sort((a, b) => {
             const priceA = a.discountPrice ? a.discountPrice : a.mainPrice;
             const priceB = b.discountPrice ? b.discountPrice : b.mainPrice;
 
             return priceB - priceA;
           }),
-        ]);
+        ];
         break;
       default: // cheapest
-        setCourseShow(() => [
+        coursePaginate.current = [
           ...courseFilter.current.sort((a, b) => {
             const priceA = a.discountPrice ? a.discountPrice : a.mainPrice;
             const priceB = b.discountPrice ? b.discountPrice : b.mainPrice;
 
             return priceA - priceB;
           }),
-        ]);
+        ];
         break;
     }
+
+    paginateHandler({ selected: 0 });
   };
 
-  // items Accordions Sorting ///////////////////////////////////////////////////////////////////////
-  const optionSorting = useRef('newest');
+  // Pagination //////////////////////////////////////////////////////////////////////////////////////////////
+  const coursePaginate = useRef([]);
+  const [reloadPaginate, setReloadPaginate] = useState(false);
+  useEffect(() => {
+    setReloadPaginate(false);
+  }, [reloadPaginate]);
+
+  const containerCourseShow = useRef(null);
+  useEffect(() => {
+    containerCourseShow.current.classList.add('container-course-show');
+  }, [courseShow]);
+
+  const paginateHandler = ({ selected: numPage }) => {
+    const result = coursePaginate.current.filter((course, i) => i >= numPage * 6 && i < (numPage + 1) * 6);
+
+    containerCourseShow.current.classList.remove('container-course-show');
+    window.setTimeout(() => {
+      setCourseShow(() => [...result]);
+    }, 200);
+  };
+
+  // items Accordions Sorting ////////////////////////////////////////////////////////////////////////////////
   const changeHandlerOptionSorting = (e) => {
     optionSorting.current = e.target.id;
     sortingCourse();
@@ -145,7 +183,7 @@ const Courses = () => {
     );
   }, []);
 
-  // items Accordions Status /////////////////////////////////////////////////////////////////////////
+  // items Accordions Status /////////////////////////////////////////////////////////////////////////////////
   const changeHandlerOptionFilterStatus = (e) => {
     if (e.target.checked) {
       optionFilter.current.status.push(e.target.id);
@@ -259,20 +297,49 @@ const Courses = () => {
         <Row>
           <Col className='col-12 col-sm-5 col-md-4 col-lg-3 col-xl-2'>
             <div className='container-accordions'>
-              <AccordionMenu title={'مرتب سازی'}>{itemAccordionSorting}</AccordionMenu>
-              <AccordionMenu title={'مدرس'}>{itemsAccordionFiltering.teacher}</AccordionMenu>
-              <AccordionMenu title={'دسته بندی'}>{itemsAccordionFiltering.category}</AccordionMenu>
-              <AccordionMenu title={'وضعیت دوره'}>{itemsAccordionStatus}</AccordionMenu>
+              <AccordionMenu reloadAccordion={reloadAccordion} title={'مرتب سازی'}>
+                {itemAccordionSorting}
+              </AccordionMenu>
+
+              <AccordionMenu reloadAccordion={reloadAccordion} title={'مدرس'}>
+                {itemsAccordionFiltering.teacher}
+              </AccordionMenu>
+
+              <AccordionMenu reloadAccordion={reloadAccordion} title={'دسته بندی'}>
+                {itemsAccordionFiltering.category}
+              </AccordionMenu>
+
+              <AccordionMenu reloadAccordion={reloadAccordion} title={'وضعیت دوره'}>
+                {itemsAccordionStatus}
+              </AccordionMenu>
             </div>
           </Col>
-          <Col className='col-12 col-sm-7 col-md-8 col-lg-9 col-xl-10' style={{ marginTop: '20px', overflow: 'hidden' }}>
-            <Row className='row-cols-1 row-cols-lg-2 row-cols-xl-3'>
-              {courseShow.map((course) => (
-                <Col key={course.id}>
-                  <CardCourse {...course} />
-                </Col>
-              ))}
-            </Row>
+
+          <Col className='col-12 col-sm-7 col-md-8 col-lg-9 col-xl-10' style={{ paddingTop: '20px', overflow: 'hidden' }}>
+            <div className='container-course-hide' ref={containerCourseShow}>
+              <Row className='row-cols-1 row-cols-lg-2 row-cols-xl-3'>
+                {courseShow.map((course) => (
+                  <Col key={course.id}>
+                    <CardCourse {...course} />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+
+            {reloadPaginate ? null : (
+              <ReactPaginate
+                renderOnZeroPageCount={null}
+                onPageChange={paginateHandler}
+                className='container-paginate-course'
+                nextClassName='btn-next'
+                previousClassName='btn-prev'
+                breakClassName='item-paginate'
+                pageClassName='item-paginate'
+                pageCount={coursePaginate.current.length <= 6 ? 0 : Math.ceil(coursePaginate.current.length / 6)}
+                nextLabel={<IoIosArrowDropright className='icon' />}
+                previousLabel={<IoIosArrowDropleft className='icon' />}
+              />
+            )}
           </Col>
         </Row>
       </Container>

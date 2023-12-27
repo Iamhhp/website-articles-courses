@@ -63,3 +63,47 @@
     }
   }
 }
+
+.container-course-hide {
+  transition: all 0.4s;
+  transform: translateX(-120%);
+  opacity: 0;
+}
+
+.container-course-show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.container-paginate-course {
+  display: flex;
+  flex-flow: row-reverse nowrap;
+  justify-content: center;
+  align-items: center;
+
+  .item-paginate {
+    font-size: 30px;
+    color: #0d6efd;
+    padding: 5px;
+    list-style-type: none;
+
+    a {
+      font-family: 'Yekan', sans-serif, serif;
+      font-size: 20px;
+      font-weight: 700;
+    }
+  }
+
+  .btn-next,
+  .btn-prev {
+    font-size: 30px;
+    color: #0d6efd;
+    list-style-type: none;
+
+    margin: 0px 7px;
+  }
+
+  .selected {
+    border-bottom: 2px solid #0d6efd;
+  }
+}
