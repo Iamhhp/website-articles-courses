@@ -317,29 +317,37 @@ const Courses = () => {
 
           <Col className='col-12 col-sm-7 col-md-8 col-lg-9 col-xl-10' style={{ paddingTop: '20px', overflow: 'hidden' }}>
             <div className='container-course-hide' ref={containerCourseShow}>
-              <Row className='row-cols-1 row-cols-lg-2 row-cols-xl-3'>
-                {courseShow.map((course) => (
-                  <Col key={course.id}>
-                    <CardCourse {...course} />
-                  </Col>
-                ))}
-              </Row>
-            </div>
+              {isPending ? (
+                <b>درحال بارگذاری...</b>
+              ) : (
+                <Row className='row-cols-1 row-cols-lg-2 row-cols-xl-3'>
+                  {!courseShow.length ? (
+                    <b>موردی یافت نشد!</b>
+                  ) : (
+                    courseShow.map((course) => (
+                      <Col key={course.id}>
+                        <CardCourse {...course} />
+                      </Col>
+                    ))
+                  )}
+                </Row>
+              )}
 
-            {reloadPaginate ? null : (
-              <ReactPaginate
-                renderOnZeroPageCount={null}
-                onPageChange={paginateHandler}
-                className='container-paginate-course'
-                nextClassName='btn-next'
-                previousClassName='btn-prev'
-                breakClassName='item-paginate'
-                pageClassName='item-paginate'
-                pageCount={coursePaginate.current.length <= 6 ? 0 : Math.ceil(coursePaginate.current.length / 6)}
-                nextLabel={<IoIosArrowDropright className='icon' />}
-                previousLabel={<IoIosArrowDropleft className='icon' />}
-              />
-            )}
+              {reloadPaginate ? null : (
+                <ReactPaginate
+                  renderOnZeroPageCount={null}
+                  onPageChange={paginateHandler}
+                  className='container-paginate-course'
+                  nextClassName='btn-next'
+                  previousClassName='btn-prev'
+                  breakClassName='item-paginate'
+                  pageClassName='item-paginate'
+                  pageCount={coursePaginate.current.length <= 6 ? 0 : Math.ceil(coursePaginate.current.length / 6)}
+                  nextLabel={<IoIosArrowDropright className='icon' />}
+                  previousLabel={<IoIosArrowDropleft className='icon' />}
+                />
+              )}
+            </div>
           </Col>
         </Row>
       </Container>
