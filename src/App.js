@@ -6,6 +6,7 @@ import ArticleEditCreate from './components/pages/ArticleEditCreate/ArticleEditC
 import Articles from './components/pages/Articles/Articles';
 import Course from './components/pages/Course/Course';
 import Courses from './components/pages/Courses/Courses';
+import AboutUs from './components/pages/AboutUs/AboutUs';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path='/Articles' element={<Articles />} />
           <Route path='/Course/:idCourse' element={<Course />} />
           <Route path='/Courses' element={<Courses />} />
+          <Route path='/About-us' element={<AboutUs />} />
         </Route>
       </Routes>
     </BrowserRouter>
