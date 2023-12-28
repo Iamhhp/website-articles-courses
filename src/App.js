@@ -7,6 +7,7 @@ import Articles from './components/pages/Articles/Articles';
 import Course from './components/pages/Course/Course';
 import Courses from './components/pages/Courses/Courses';
 import AboutUs from './components/pages/AboutUs/AboutUs';
+import NotFound from './components/pages/NotFound/NotFound';
 
 const App = () => {
   return (
@@ -20,6 +21,7 @@ const App = () => {
           <Route path='/Course/:idCourse' element={<Course />} />
           <Route path='/Courses' element={<Courses />} />
           <Route path='/About-us' element={<AboutUs />} />
+          <Route path='*' element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
