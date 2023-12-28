@@ -6,6 +6,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import { IoIosArrowDropleft, IoIosArrowDropright } from 'react-icons/io';
+import NoResponse from '../NoResponse/NoResponse';
 
 const Articles = () => {
   useEffect(() => {
@@ -249,8 +250,10 @@ const Articles = () => {
 
           <Col className='col-12 col-sm-7 col-md-8 col-lg-9 col-xl-10' style={{ overflow: 'hidden' }}>
             <div className='container-articleShow-hide' ref={containerArticleShow}>
-              {isPending ? (
+              {isPending === true ? (
                 <b>درحال بارگذاری...</b>
+              ) : isPending.responseState ? (
+                <NoResponse responseState={isPending.responseState} />
               ) : (
                 <Row className='row-cols-1 row-cols-lg-2 row-cols-xl-3'>
                   {!articleShow.length ? (
