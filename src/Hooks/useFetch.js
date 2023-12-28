@@ -17,7 +17,8 @@ const useFetch = (url) => {
         }
       })
       .catch((err) => {
-        setIsPending({ responseState: err });
+        console.log(err);
+        setIsPending({ responseState: 'Failed to receive data' });
       });
   }, []);
 
