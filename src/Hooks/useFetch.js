@@ -13,11 +13,11 @@ const useFetch = (url) => {
             setIsPending(false);
           });
         } else {
-          console.log(response.statusText);
+          setIsPending({ responseState: `${response.statusText} ${response.status}` });
         }
       })
       .catch((err) => {
-        console.log(err);
+        setIsPending({ responseState: err });
       });
   }, []);
 

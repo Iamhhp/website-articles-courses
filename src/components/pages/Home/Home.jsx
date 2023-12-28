@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import CardCourse from '../../CardCourse/CardCourse';
+import NoResponse from '../NoResponse/NoResponse';
 
 const Home = () => {
   useEffect(() => {
@@ -33,59 +34,71 @@ const Home = () => {
       </svg>
 
       <Container>
-        {isPendingArticle ? (
-          <h3>درحال بارگذاری...</h3>
-        ) : (
-          <Swiper
-            className='my-swiper'
-            breakpoints={{ 1200: { slidesPerView: 3 }, 768: { slidesPerView: 2 }, 576: { slidesPerView: 1 } }}
-            spaceBetween={40}
-            autoplay={{
-              delay: 3000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            modules={[Autoplay]}
-          >
-            <div className='header-swiper'>
-              <div className='title'>جدیدترین مقالات</div>
-              <BtnSwiper />
-            </div>
+        <Swiper
+          className='my-swiper'
+          breakpoints={{ 1200: { slidesPerView: 3 }, 768: { slidesPerView: 2 }, 576: { slidesPerView: 1 } }}
+          spaceBetween={40}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+            pauseOnMouseEnter: true,
+          }}
+          modules={[Autoplay]}
+        >
+          <div className='header-swiper'>
+            <div className='title'>جدیدترین مقالات</div>
+            <BtnSwiper />
+          </div>
 
-            {dataArticles
+          {isPendingArticle === true ? (
+            <SwiperSlide>
+              <h3>درحال بارگذاری...</h3>
+            </SwiperSlide>
+          ) : isPendingArticle.responseState ? (
+            <SwiperSlide>
+              <NoResponse responseState={isPendingArticle.responseState} />
+            </SwiperSlide>
+          ) : (
+            dataArticles
               .filter((article, i) => i >= 0 && i <= 6)
               .map((article) => (
                 <SwiperSlide key={article.id}>
                   <CardArticle {...article} />
                 </SwiperSlide>
-              ))}
-          </Swiper>
-        )}
+              ))
+          )}
+        </Swiper>
 
-        {isPendingCourses ? (
-          <h3>در حال بارگذاری...</h3>
-        ) : (
-          <Swiper
-            className='my-swiper'
-            breakpoints={{ 1200: { slidesPerView: 3 }, 768: { slidesPerView: 2 }, 576: { slidesPerView: 1 } }}
-            spaceBetween={40}
-            autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
-            modules={[Autoplay]}
-          >
-            <div className='header-swiper'>
-              <div className='title'>جدیدترین مقالات</div>
-              <BtnSwiper />
-            </div>
+        <Swiper
+          className='my-swiper'
+          breakpoints={{ 1200: { slidesPerView: 3 }, 768: { slidesPerView: 2 }, 576: { slidesPerView: 1 } }}
+          spaceBetween={40}
+          autoplay={{ delay: 3000, disableOnInteraction: false, pauseOnMouseEnter: true }}
+          modules={[Autoplay]}
+        >
+          <div className='header-swiper'>
+            <div className='title'>جدیدترین مقالات</div>
+            <BtnSwiper />
+          </div>
 
-            {dataCourses
+          {isPendingCourses === true ? (
+            <SwiperSlide>
+              <h3>در حال بارگذاری...</h3>
+            </SwiperSlide>
+          ) : isPendingCourses.responseState ? (
+            <SwiperSlide>
+              <NoResponse responseState={isPendingCourses.responseState} />
+            </SwiperSlide>
+          ) : (
+            dataCourses
               .filter((article, i) => i >= 0 && i <= 6)
               .map((course) => (
                 <SwiperSlide key={course.id}>
                   <CardCourse {...course} />
                 </SwiperSlide>
-              ))}
-          </Swiper>
-        )}
+              ))
+          )}
+        </Swiper>
       </Container>
     </>
   );

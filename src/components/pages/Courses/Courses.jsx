@@ -7,6 +7,7 @@ import ToggleBtn from '../../ToggleBtn/ToggleBtn';
 import ReactPaginate from 'react-paginate';
 import CardCourse from '../../CardCourse/CardCourse';
 import { IoIosArrowDropright, IoIosArrowDropleft } from 'react-icons/io';
+import NoResponse from '../NoResponse/NoResponse';
 
 const Courses = () => {
   useEffect(() => {
@@ -317,8 +318,10 @@ const Courses = () => {
 
           <Col className='col-12 col-sm-7 col-md-8 col-lg-9 col-xl-10' style={{ paddingTop: '20px', overflow: 'hidden' }}>
             <div className='container-course-hide' ref={containerCourseShow}>
-              {isPending ? (
+              {isPending === true ? (
                 <b>درحال بارگذاری...</b>
+              ) : isPending.responseState ? (
+                <NoResponse responseState={isPending.responseState} />
               ) : (
                 <Row className='row-cols-1 row-cols-lg-2 row-cols-xl-3'>
                   {!courseShow.length ? (
