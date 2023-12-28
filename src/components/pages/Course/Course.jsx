@@ -7,6 +7,7 @@ import imgProfile from './../../../assets/images/img-profile.jpg';
 import { GiProgression } from 'react-icons/gi';
 import AccordionMenu from '../../AccordionMenu/AccordionMenu';
 import { FaRegFileVideo } from 'react-icons/fa';
+import NoResponse from '../NoResponse/NoResponse';
 
 const Course = () => {
   const { idCourse } = useParams();
@@ -15,12 +16,14 @@ const Course = () => {
 
   return (
     <Container className='container-course'>
-      <div className='title-header'>دوره ها</div>
-      <Row>
-        {isPending ? (
-          <b>درحال بارگذاری...</b>
-        ) : (
-          <>
+      {isPending === true ? (
+        <b>درحال بارگذاری...</b>
+      ) : isPending.responseState ? (
+        <NoResponse responseState={isPending.responseState} />
+      ) : (
+        <>
+          <div className='title-header'>دوره ها</div>
+          <Row>
             <Col>
               <div className='preview-course'>
                 <div className='title'>{title}</div>
@@ -237,9 +240,9 @@ const Course = () => {
                 <button type='button'>ارسال نظر</button>
               </div>
             </Col>
-          </>
-        )}
-      </Row>
+          </Row>
+        </>
+      )}
     </Container>
   );
 };
