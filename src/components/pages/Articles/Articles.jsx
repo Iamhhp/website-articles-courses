@@ -123,10 +123,10 @@ const Articles = () => {
   const sortingArticle = () => {
     switch (optionSorting.current) {
       case 'newest':
-        articlePagination.current = [...articleFilter.current.sort((a, b) => a.id - b.id)];
+        articlePagination.current = [...articleFilter.current.sort((a, b) => b.id - a.id)];
         break;
       case 'oldest':
-        articlePagination.current = [...articleFilter.current.sort((a, b) => b.id - a.id)];
+        articlePagination.current = [...articleFilter.current.sort((a, b) => a.id - b.id)];
         break;
       case 'longest':
         articlePagination.current = [
