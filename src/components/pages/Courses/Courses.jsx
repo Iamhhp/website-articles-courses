@@ -32,6 +32,12 @@ const Courses = () => {
   }, [courseSearch]);
 
   const clickHandlerSearchCourse = (e) => {
+    if (e.target.nodeName === 'INPUT') {
+      if (e.key !== 'Enter') {
+        return;
+      }
+    }
+
     const boxSearch = e.target.parentElement;
     const inputSearch = boxSearch.children[0];
     const optionSearch = boxSearch.children[1];
@@ -246,7 +252,7 @@ const Courses = () => {
     const category = [];
 
     // Extract Options Filter by new courseSearch
-    courseFetch.forEach((course) => {
+    courseSearch.forEach((course) => {
       if (!teacher.includes(course.teacher)) {
         teacher.push(course.teacher);
       }
@@ -279,7 +285,7 @@ const Courses = () => {
         <Container className='header-courses'>
           <div className='title'>دوره ها</div>
           <div className='box-search'>
-            <input type='text' name='input-text' id='input-text' />
+            <input type='text' name='input-text' id='input-text' onKeyDown={clickHandlerSearchCourse} />
             <select name='option-search' id='option-search'>
               <option value='title'>عنوان</option>
               <option value='description'>توضیحات</option>
