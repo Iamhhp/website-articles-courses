@@ -28,4 +28,4 @@ To watch the project clip, visit [this link](https://www.aparat.com/Software_hp)
 
 `npm start`
 
-**Notes-1: db.json: Ensure that this file is filled with the necessary data for your project. Make sure the port used by json-server does not conflict with the port specified in npm start (default is 3000).**
+**Notes: db.json: Ensure that this file is filled with the necessary data for your project. Make sure the port used by json-server does not conflict with the port specified in npm start (default is 3000).**
