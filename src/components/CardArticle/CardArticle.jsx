@@ -2,14 +2,16 @@ import './CardArticle.css';
 import { Link } from 'react-router-dom';
 import { FaBookReader } from 'react-icons/fa';
 import { useEffect } from 'react';
+import useTheme from './../../Hooks/useTheme';
 
 const CardArticle = ({ id, image, title, description, writer, readingTime }) => {
   useEffect(() => {
     console.log('CardArticle Render!');
   });
+  const { colorState } = useTheme();
 
   return (
-    <div className='card-article'>
+    <div className='card-article' style={{ borderColor: colorState.headerFooter, boxShadow: `0px 0px 5px 1px ${colorState.headerFooter}` }}>
       <img src={image} alt='' />
 
       <div className='title'>
