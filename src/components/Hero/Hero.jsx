@@ -60,7 +60,7 @@ const HeroBox = ({ title, count, icon }) => {
   return (
     <div className='container-heroBox'>
       <div className='title'>
-        {title} {icon}
+        {icon} {title}
       </div>
       <div className='count'>
         <CountUp start={0} end={count} duration={3} delay={1} />
