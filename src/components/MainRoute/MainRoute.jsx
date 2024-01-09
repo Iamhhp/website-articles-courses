@@ -1,8 +1,9 @@
 import './MainRoute.css';
-import { Navigate, Outlet, useNavigate } from 'react-router-dom';
+import { Outlet, useNavigate } from 'react-router-dom';
+import { memo, useEffect } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { memo, useEffect } from 'react';
+import Theme from '../Theme/Theme';
 
 const MainRoute = () => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ const MainRoute = () => {
       <div className='container-main-route'>
         <Outlet />
       </div>
+      <Theme />
       <Footer />
     </>
   );

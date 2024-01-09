@@ -10,18 +10,19 @@ import CountUp from 'react-countup';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 import { memo, useEffect } from 'react';
+import useTheme from './../../Hooks/useTheme';
 
 const Hero = () => {
   useEffect(() => {
     console.log('Hero Render!');
   });
-
+  const { colorState } = useTheme();
   useEffect(() => {
     aos.init();
   }, []);
 
   return (
-    <Container fluid className='container-hero'>
+    <Container fluid className='container-hero' style={{ backgroundColor: colorState.home }}>
       <Container>
         <Row>
           <Col className='col-sm-12 col-md-6 col-lg-5'>
