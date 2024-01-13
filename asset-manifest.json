@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Home/static/css/main.94bb9efb.css",
-    "main.js": "/Home/static/js/main.0f867d14.js",
-    "static/media/Lalezar.ttf": "/Home/static/media/Lalezar.241ca811c53de4ed36a4.ttf",
-    "static/media/img-profile.jpg": "/Home/static/media/img-profile.6c2ca9570384cafd3d77.jpg",
-    "static/media/Yekan.ttf": "/Home/static/media/Yekan.012789e6e9f8b9a4929f.ttf",
-    "static/media/hero.svg": "/Home/static/media/hero.24d8171c233edfbedf66e8db29c49c04.svg",
-    "index.html": "/Home/index.html",
-    "main.94bb9efb.css.map": "/Home/static/css/main.94bb9efb.css.map",
-    "main.0f867d14.js.map": "/Home/static/js/main.0f867d14.js.map"
+    "main.css": "/website-articles-courses/static/css/main.056d881e.css",
+    "main.js": "/website-articles-courses/static/js/main.b779e6bc.js",
+    "static/media/Lalezar.ttf": "/website-articles-courses/static/media/Lalezar.241ca811c53de4ed36a4.ttf",
+    "static/media/img-profile.jpg": "/website-articles-courses/static/media/img-profile.6c2ca9570384cafd3d77.jpg",
+    "static/media/Yekan.ttf": "/website-articles-courses/static/media/Yekan.012789e6e9f8b9a4929f.ttf",
+    "static/media/hero.svg": "/website-articles-courses/static/media/hero.24d8171c233edfbedf66e8db29c49c04.svg",
+    "index.html": "/website-articles-courses/index.html",
+    "main.056d881e.css.map": "/website-articles-courses/static/css/main.056d881e.css.map",
+    "main.b779e6bc.js.map": "/website-articles-courses/static/js/main.b779e6bc.js.map"
   },
   "entrypoints": [
-    "static/css/main.94bb9efb.css",
-    "static/js/main.0f867d14.js"
+    "static/css/main.056d881e.css",
+    "static/js/main.b779e6bc.js"
   ]
 }
