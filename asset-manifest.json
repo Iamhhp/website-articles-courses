@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/website-articles-courses/static/css/main.056d881e.css",
-    "main.js": "/website-articles-courses/static/js/main.80ff41a5.js",
+    "main.js": "/website-articles-courses/static/js/main.08e2870a.js",
     "static/media/Lalezar.ttf": "/website-articles-courses/static/media/Lalezar.241ca811c53de4ed36a4.ttf",
     "static/media/img-profile.jpg": "/website-articles-courses/static/media/img-profile.6c2ca9570384cafd3d77.jpg",
     "static/media/Yekan.ttf": "/website-articles-courses/static/media/Yekan.012789e6e9f8b9a4929f.ttf",
     "static/media/hero.svg": "/website-articles-courses/static/media/hero.24d8171c233edfbedf66e8db29c49c04.svg",
     "index.html": "/website-articles-courses/index.html",
     "main.056d881e.css.map": "/website-articles-courses/static/css/main.056d881e.css.map",
-    "main.80ff41a5.js.map": "/website-articles-courses/static/js/main.80ff41a5.js.map"
+    "main.08e2870a.js.map": "/website-articles-courses/static/js/main.08e2870a.js.map"
   },
   "entrypoints": [
     "static/css/main.056d881e.css",
-    "static/js/main.80ff41a5.js"
+    "static/js/main.08e2870a.js"
   ]
 }
