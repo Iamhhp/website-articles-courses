@@ -14,7 +14,7 @@ const ArticleEditCreate = () => {
   const { editCreate, idArticle } = useParams();
   useEffect(() => {
     if (editCreate === 'Edit') {
-      fetch(`http://localhost:5000/articles/${idArticle}`)
+      fetch(`https://dbserver.liara.run/articles/${idArticle}`)
         .then((response) => {
           if (response.status === 200) {
             response.json().then((json) => {

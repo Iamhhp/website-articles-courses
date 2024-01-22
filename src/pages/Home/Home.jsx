@@ -20,8 +20,8 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  const [dataArticles, isPendingArticle] = useFetch('http://localhost:5000/articles');
-  const [dataCourses, isPendingCourses] = useFetch('http://localhost:5000/courses');
+  const [dataArticles, isPendingArticle] = useFetch('https://dbserver.liara.run/articles');
+  const [dataCourses, isPendingCourses] = useFetch('https://dbserver.liara.run/courses');
 
   return (
     <>

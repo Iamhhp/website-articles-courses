@@ -12,7 +12,7 @@ import NoResponse from '../NoResponse/NoResponse';
 const Course = () => {
   const { idCourse } = useParams();
 
-  const [{ image, title, teacher, descTeacher, studentCount, progressPercent }, isPending] = useFetch(`http://localhost:5000/courses/${idCourse}`);
+  const [{ image, title, teacher, descTeacher, studentCount, progressPercent }, isPending] = useFetch(`https://dbserver.liara.run/courses/${idCourse}`);
 
   return (
     <Container className='container-course'>
