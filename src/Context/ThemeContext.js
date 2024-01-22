@@ -5,11 +5,11 @@ import useThemeReducer from '../Hooks/useThemeReducer';
 const StateThemeContext = createContext();
 const ChangeThemeContext = createContext();
 const ThemeContextProvider = ({ children }) => {
-  const { stateTheme, changeStateTheme } = useThemeReducer();
+  const { stateTheme, changeTheme } = useThemeReducer();
 
   return (
     <StateThemeContext.Provider value={stateTheme}>
-      <ChangeThemeContext.Provider value={changeStateTheme}>{children}</ChangeThemeContext.Provider>
+      <ChangeThemeContext.Provider value={changeTheme}>{children}</ChangeThemeContext.Provider>
     </StateThemeContext.Provider>
   );
 };

@@ -11,9 +11,9 @@ const useThemeReducer = () => {
   const themeReducer = (state, action) => {
     switch (action.type) {
       case ACTION_TYPE.DARK:
-        return { color: '#00A9FF' };
-      case ACTION_TYPE.LIGHT:
         return { color: '#030637' };
+      case ACTION_TYPE.LIGHT:
+        return { color: '#00A9FF' };
       default:
         return state;
     }
@@ -21,13 +21,13 @@ const useThemeReducer = () => {
 
   const [stateTheme, dispatch] = useReducer(themeReducer, initializeStateTheme);
 
-  const changeStateTheme = (actionType) => {
+  const changeTheme = (actionType) => {
     dispatch({ type: actionType });
   };
 
   return {
     stateTheme,
-    changeStateTheme,
+    changeTheme,
   };
 };
 export default useThemeReducer;
