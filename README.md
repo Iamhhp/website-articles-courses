@@ -1,8 +1,10 @@
 # Quick Guide to Run a React Project with json-server
 
-## Watch the Short Clip From Project
+## Watch Project
 
 To watch the project clip, visit [this link](https://www.aparat.com/Software_hp)
+
+To watch the project on site click [this link](https://iamhhp.github.io/website-articles-courses/)
 
 ## Installation:
 
