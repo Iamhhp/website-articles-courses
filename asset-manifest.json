@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/website-articles-courses/static/css/main.056d881e.css",
-    "main.js": "/website-articles-courses/static/js/main.413e1f06.js",
+    "main.css": "/website-articles-courses/static/css/main.4ced31cb.css",
+    "main.js": "/website-articles-courses/static/js/main.8dd0f643.js",
     "static/media/Lalezar.ttf": "/website-articles-courses/static/media/Lalezar.241ca811c53de4ed36a4.ttf",
     "static/media/img-profile.jpg": "/website-articles-courses/static/media/img-profile.6c2ca9570384cafd3d77.jpg",
     "static/media/Yekan.ttf": "/website-articles-courses/static/media/Yekan.012789e6e9f8b9a4929f.ttf",
     "static/media/hero.svg": "/website-articles-courses/static/media/hero.24d8171c233edfbedf66e8db29c49c04.svg",
     "index.html": "/website-articles-courses/index.html",
-    "main.056d881e.css.map": "/website-articles-courses/static/css/main.056d881e.css.map",
-    "main.413e1f06.js.map": "/website-articles-courses/static/js/main.413e1f06.js.map"
+    "main.4ced31cb.css.map": "/website-articles-courses/static/css/main.4ced31cb.css.map",
+    "main.8dd0f643.js.map": "/website-articles-courses/static/js/main.8dd0f643.js.map"
   },
   "entrypoints": [
-    "static/css/main.056d881e.css",
-    "static/js/main.413e1f06.js"
+    "static/css/main.4ced31cb.css",
+    "static/js/main.8dd0f643.js"
   ]
 }
