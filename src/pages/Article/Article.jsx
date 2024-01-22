@@ -1,11 +1,11 @@
 import './Article.css';
-import useFetch from '../../../Hooks/useFetch';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import axios from 'axios';
 import NoResponse from '../NoResponse/NoResponse';
+import useFetch from '../../Hooks/useFetch';
 
 const Article = () => {
   useEffect(() => {

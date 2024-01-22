@@ -1,12 +1,12 @@
 import MainRoute from './components/MainRoute/MainRoute';
-import Home from './components/pages/Home/Home';
-import Article from './components/pages/Article/Article';
-import ArticleEditCreate from './components/pages/ArticleEditCreate/ArticleEditCreate';
-import Articles from './components/pages/Articles/Articles';
-import Course from './components/pages/Course/Course';
-import Courses from './components/pages/Courses/Courses';
-import AboutUs from './components/pages/AboutUs/AboutUs';
-import NotFound from './components/pages/NotFound/NotFound';
+import Home from './pages/Home/Home';
+import Article from './pages/Article/Article';
+import ArticleEditCreate from './pages/ArticleEditCreate/ArticleEditCreate';
+import Articles from './pages/Articles/Articles';
+import Course from './pages/Course/Course';
+import Courses from './pages/Courses/Courses';
+import AboutUs from './pages/AboutUs/AboutUs';
+import NotFound from './pages/NotFound/NotFound';
 
 const listRoute = [
   {

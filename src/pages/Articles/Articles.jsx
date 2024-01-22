@@ -1,7 +1,7 @@
 import './Articles.css';
-import useFetch from '../../../Hooks/useFetch';
-import AccordionMenu from '../../AccordionMenu/AccordionMenu';
-import CardArticle from '../../CardArticle/CardArticle';
+import useFetch from '../../Hooks/useFetch';
+import AccordionMenu from '../../components/AccordionMenu/AccordionMenu';
+import CardArticle from '../../components/CardArticle/CardArticle';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import ReactPaginate from 'react-paginate';

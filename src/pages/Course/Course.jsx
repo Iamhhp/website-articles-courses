@@ -2,10 +2,10 @@ import './Course.css';
 import { Col, Container, Row } from 'react-bootstrap';
 import { PiStudent } from 'react-icons/pi';
 import { useParams } from 'react-router-dom';
-import useFetch from '../../../Hooks/useFetch';
-import imgProfile from './../../../assets/images/img-profile.jpg';
+import useFetch from '../../Hooks/useFetch';
+import imgProfile from '../../assets/images/img-profile.jpg';
 import { GiProgression } from 'react-icons/gi';
-import AccordionMenu from '../../AccordionMenu/AccordionMenu';
+import AccordionMenu from '../../components/AccordionMenu/AccordionMenu';
 import { FaRegFileVideo } from 'react-icons/fa';
 import NoResponse from '../NoResponse/NoResponse';
 

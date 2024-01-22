@@ -1,14 +1,14 @@
 import './Home.css';
-import Hero from '../../Hero/Hero';
-import CardArticle from '../../CardArticle/CardArticle';
-import useFetch from '../../../Hooks/useFetch';
+import Hero from '../../components/Hero/Hero';
+import CardArticle from '../../components/CardArticle/CardArticle';
+import useFetch from '../../Hooks/useFetch';
 import { Container } from 'react-bootstrap';
 import { useEffect, useState } from 'react';
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa';
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Autoplay } from 'swiper/modules';
 import 'swiper/css';
-import CardCourse from '../../CardCourse/CardCourse';
+import CardCourse from '../../components/CardCourse/CardCourse';
 import NoResponse from '../NoResponse/NoResponse';
 
 const Home = () => {

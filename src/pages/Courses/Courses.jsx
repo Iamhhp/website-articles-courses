@@ -1,11 +1,11 @@
 import './Courses.css';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import useFetch from '../../../Hooks/useFetch';
+import useFetch from '../../Hooks/useFetch';
 import { Col, Container, Row } from 'react-bootstrap';
-import AccordionMenu from '../../AccordionMenu/AccordionMenu';
-import ToggleBtn from '../../ToggleBtn/ToggleBtn';
+import AccordionMenu from '../../components/AccordionMenu/AccordionMenu';
+import ToggleBtn from '../../components/ToggleBtn/ToggleBtn';
 import ReactPaginate from 'react-paginate';
-import CardCourse from '../../CardCourse/CardCourse';
+import CardCourse from '../../components/CardCourse/CardCourse';
 import { IoIosArrowDropright, IoIosArrowDropleft } from 'react-icons/io';
 import NoResponse from '../NoResponse/NoResponse';
 
