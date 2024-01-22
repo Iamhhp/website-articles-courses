@@ -15,7 +15,7 @@ const Courses = () => {
     window.scrollTo(0, 0);
   });
 
-  const [courseFetch, isPending] = useFetch('http://localhost:5000/courses');
+  const [courseFetch, isPending] = useFetch('https://dbserver.liara.run/courses');
   const [courseShow, setCourseShow] = useState([]);
   useEffect(() => {
     setCourseSearch(() => [...courseFetch]);

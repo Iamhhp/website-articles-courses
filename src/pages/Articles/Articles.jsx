@@ -14,7 +14,7 @@ const Articles = () => {
     window.scrollTo(0, 0);
   });
 
-  const [dataArticleFetch, isPending] = useFetch('http://localhost:5000/articles');
+  const [dataArticleFetch, isPending] = useFetch('https://dbserver.liara.run/articles');
   const [articleShow, setArticleShow] = useState([]);
   useEffect(() => {
     setArticleSearch(() => [...dataArticleFetch]);

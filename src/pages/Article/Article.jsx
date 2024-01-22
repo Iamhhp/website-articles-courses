@@ -18,7 +18,7 @@ const Article = () => {
 
   const navigate = useNavigate();
   const { idArticle } = useParams();
-  const [{ id, image, title, writer, category, readingTime }, isPending] = useFetch(`http://localhost:5000/articles/${idArticle}`);
+  const [{ id, image, title, writer, category, readingTime }, isPending] = useFetch(`https://dbserver.liara.run/articles/${idArticle}`);
 
   const clickHandlerBtnDel = () => {
     Swal.fire({
