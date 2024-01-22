@@ -1,7 +1,7 @@
 import './CardArticle.css';
 import { Link } from 'react-router-dom';
 import { FaBookReader } from 'react-icons/fa';
-import { useEffect } from 'react';
+import { memo, useEffect } from 'react';
 
 const CardArticle = ({ id, image, title, description, writer, readingTime }) => {
   useEffect(() => {
@@ -30,4 +30,4 @@ const CardArticle = ({ id, image, title, description, writer, readingTime }) => 
     </div>
   );
 };
-export default CardArticle;
+export default memo(CardArticle);
