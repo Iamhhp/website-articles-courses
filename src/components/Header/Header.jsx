@@ -6,11 +6,14 @@ import persianDate from 'persian-date';
 import OffcanvasMenu from '../OffcanvasMenu/OffcanvasMenu';
 import { RiMenuFoldFill } from 'react-icons/ri';
 import { NavLink } from 'react-router-dom';
+import { useStateThemeContext } from '../../Context/ThemeContext';
 
 const Header = () => {
   useEffect(() => {
     console.log('Header Render!');
   });
+
+  const stateTheme = useStateThemeContext();
 
   const time = useRef(null);
   useEffect(() => {
@@ -35,11 +38,11 @@ const Header = () => {
           <NavLink to={'/Courses'}>دوره ها</NavLink>
         </li>
         <li className='dropDown-menu'>
-          <NavLink to={'Articles'} className='main-menu'>
+          <NavLink to={'Articles'} className='main-menu' style={{ backgroundColor: stateTheme.color }}>
             مقالات <FaChevronUp className='icons' />
           </NavLink>
 
-          <div className='sub-menu'>
+          <div className='sub-menu' style={{ backgroundColor: stateTheme.color }}>
             <NavLink to={'Article/Create/0'}>ایجاد مقاله</NavLink>
           </div>
         </li>
@@ -48,7 +51,7 @@ const Header = () => {
         </li>
       </>
     ),
-    []
+    [stateTheme.color]
   );
 
   const refContainerOffMenu = useRef(null);
@@ -61,7 +64,7 @@ const Header = () => {
   };
 
   return (
-    <Container fluid className='container-header'>
+    <Container fluid className='container-header' style={{ backgroundColor: stateTheme.color }}>
       <OffcanvasMenu title={'منو اصلی'} itemMenu={itemHeaderMenu} refContainerOffMenu={refContainerOffMenu} />
 
       <div className='icon-off-menu' onClick={clickHandlerIconOffMenu}>

@@ -10,6 +10,7 @@ import CountUp from 'react-countup';
 import aos from 'aos';
 import 'aos/dist/aos.css';
 import { memo, useEffect } from 'react';
+import { useStateThemeContext } from '../../Context/ThemeContext';
 
 const Hero = () => {
   useEffect(() => {
@@ -20,8 +21,10 @@ const Hero = () => {
     aos.init();
   }, []);
 
+  const stateTheme = useStateThemeContext();
+
   return (
-    <Container fluid className='container-hero'>
+    <Container fluid className='container-hero' style={{ backgroundColor: stateTheme.color }}>
       <Container>
         <Row>
           <Col className='col-sm-12 col-md-6 col-lg-5'>
