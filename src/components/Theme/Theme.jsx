@@ -16,8 +16,6 @@ const Theme = () => {
     }
   };
 
-  console.log(stateTheme);
-
   return (
     <div className='container-theme' onClick={clickHandlerTheme} style={{ borderColor: stateTheme.color, boxShadow: `0px 0px 5px 1px ${stateTheme.color}` }}>
       <MdOutlineDarkMode style={{ color: stateTheme.color }} className={stateTheme.color === '#00A9FF' ? 'icon' : 'icon icon-show'} />
